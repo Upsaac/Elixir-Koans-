@@ -1,7 +1,5 @@
 defmodule Bowling do
   def score([]), do: 0
-
-  def score([[f,s|_l]|rest]) do
-    f + s + score(rest)
-  end
+  def score([[f,s|_l],[ff|ll]|rest]) when f + s == 10 , do: f + s + ff + score([[ff|ll]|rest])
+  def score([[f,s|_l]|rest]), do: f + s + score(rest)
 end
