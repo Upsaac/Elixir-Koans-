@@ -16,4 +16,8 @@ defmodule BowlingTest do
     assert Bowling.score(game) == 16
   end
 
+  test "one strike" do
+    game = [[10,nil],[3,4]] ++ List.duplicate([0, 0], 7) ++ [[0, 0, nil]]
+    assert Bowling.score(game) == 24
+  end
 end
